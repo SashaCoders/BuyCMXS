@@ -1,0 +1,26 @@
+{
+  "users": [
+    {   
+      "id": 1,
+      "name": "Sasha",
+      "surname": "Podlesnyi",
+      "Car": "Mersedes",
+      "balance": 24500
+    },
+    {
+      "id": 2,
+      "name": "Arthur",
+      "surname": "Smarter",
+      "Car": "Mersedes",
+      "balance": 19730
+    },
+    {
+      "id": 3,
+      "name": "aboltus",
+      "surname": "narkomanovich",
+      "Car": "Mercedes",
+      "balance": 26730 
+
+    }
+  ]
+}
