@@ -1,11 +1,12 @@
-
 let conteiner_cards = document.getElementById("conteiner");
 let url = 'https://raw.githubusercontent.com/SashaCoders/CarMXshop//main/db.json';
 let toggle = document.getElementById("cart-products");
-let cart = [];
+let cart = JSON.parse(localStorage.getItem('product')) || [];
 let productArray = [];
 let originalData = [];      // оригінал
 let filteredData = [];      // фільтровані
+
+
 
 fetch(url)
   .then(async function (res) {
@@ -23,6 +24,7 @@ function draw(list) {
   conteiner_cards.innerHTML = "";
 
   list.forEach(user => {
+
     conteiner_cards.innerHTML += `
       <div class="card">
         <div class="content">
@@ -35,7 +37,7 @@ function draw(list) {
           <p>car: ${user.Car}</p>
           <p>balance: ${user.balance}</p>
         </div>
-         <button id="${user.id}" onclick="addProductToCart(${user.id})">add cart</button>
+         <button id="${user.id}" onclick="addProductToCart( ${user.id})">add cart</button>
       </div>
     `;
   });
@@ -51,6 +53,7 @@ function addProductToCart(id) {
     return p.id == id;
   });
   cart.push(product);
+  localStorage.setItem('product', JSON.stringify(cart));
   drawCartProducts();
 }
 
@@ -62,28 +65,29 @@ function drawCartProducts() {
     toggle.innerHTML += `<p class="good">${p.name} | ${p.balance}$</p>
 
  `;
+
     sum += p.balance;
   });
   toggle.innerHTML += `<p class="Balance">Balance: ${sum}$</p>
   <button onclick="buyAll()" class="buyAll">Buy All</button>
   `;
+
 }
 
+
 function buyAll() {
-    if (cart.length === 0) {
-        alert("Cart is empty");
-        return;
-    }
+  if (cart.length === 0) {
+    alert("Cart is empty");
+    return;
+  }
 
-    // Можна показати повідомлення про покупку
-    let total = cart.reduce((sum, item) => sum + (item.balance || 0), 0);
-    alert(`You bought ${cart.length} items for $${total}`);
+  let total = cart.reduce((sum, item) => sum + (item.balance || 0), 0);
+  alert(`You bought ${cart.length} items for $${total}`);
 
-    // Очищаємо кошик
-    cart = [];
+  cart = [];
+  localStorage.removeItem('product');
+  drawCartProducts();
 
-    // Оновлюємо відображення в cart-products
-    drawCartProducts();
 }
 
 
@@ -290,3 +294,4 @@ function toggle_conteiner_div_search() {
 } toggle_conteiner_div_search();
 
 
+drawCartProducts();
