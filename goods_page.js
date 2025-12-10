@@ -37,7 +37,7 @@ function draw(list) {
           <p>car: ${user.Car}</p>
           <p>balance: ${user.balance}</p>
         </div>
-         <button id="${user.id}" onclick="addProductToCart( ${user.id})">add cart</button>
+         <button id="${user.id}" class="buy" onclick="addProductToCart( ${user.id})">add cart</button>
       </div>
     `;
   });
