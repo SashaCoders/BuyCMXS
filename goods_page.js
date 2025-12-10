@@ -59,13 +59,13 @@ function drawCartProducts() {
   toggle.innerHTML = null;
   let sum = 0;
   cart.forEach(function (p) {
-    toggle.innerHTML += `<p>${p.name} | ${p.balance}$</p>
- <hr>
+    toggle.innerHTML += `<p class="good">${p.name} | ${p.balance}$</p>
+
  `;
     sum += p.balance;
   });
-  toggle.innerHTML += `<p>Balance: ${sum}$</p>
-  <button onclick="buyAll()">Buy All</button>
+  toggle.innerHTML += `<p class="Balance">Balance: ${sum}$</p>
+  <button onclick="buyAll()" class="buyAll">Buy All</button>
   `;
 }
 
