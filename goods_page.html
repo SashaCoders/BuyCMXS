@@ -7,11 +7,55 @@
     <title>Document</title>
 
     <script src="goods_page.js" defer></script>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
+<body class="goodPage">
+    <header>
+        <div class="plate-logo">
+            <h1 id="logo">CarMXshop</h1>
+        </div>
+        <div class="div_show_conteiner_div_search">
+            <img src="images/down-arrow.png" class="show_conteiner_div_search" alt="">
+        </div>
+        <div class="plate_search">
+            <div class="conteiner_div_search" id="filter-form">
+                <div id="search_name" class="div_search">
+                    <input type="search" placeholder="Name" name="name-filter" id="name-filter" class="input_search">
+                    <div class="btn_input_search">
 
-<body>
+                        <img src="images/search.png" class="btn_search" alt="">
+                    </div>
+                </div>
+                <div id="search_car" class="div_search">
+                    <input type="search" placeholder="Car" name="car-filter" id="car-filter" class="input_search">
+                    <div class="btn_input_search">
+                        <img src="images/search.png" class="btn_search" alt="">
+                    </div>
+                </div>
+                <div id="search_balance" class="div_search">
+                    <input type="search" placeholder="Balance" name="balance-filter" id="balance-filter"
+                        class="input_search">
+                    <div class="btn_input_search">
+                        <img src="images/search.png" class="btn_search" alt="">
+                    </div>
+                </div>
+            </div>
+            <img src="images/down-arrow.png" class="hide_conteiner_div_search" alt="">
+        </div>
+
+        <div>
+            <div class="btn_nav_show"><img src="images/btn_nav_show.png" class="btn_nav" alt=""></div>
+            <nav class="nav">
+                <img src="images/close.png" class="btn_nav_hide" alt="">
+                <ul>
+                    <li><a href="">Головна</a></li>
+                    <li><a href="">Пошук авто</a></li>
+                    <li><a href="">Про нас</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
     <div id="cart">
         <button id="cart-button" onclick="openCart()">
             <img src="https://robocodeschool.github.io/marketplace/img/cart.png" alt="cart">
@@ -20,9 +64,20 @@
             Cart is empty
         </div>
     </div>
-
-    <div id="Dash"></div>
-
+    <div class="conteiner" id="conteiner">
+    </div>
+    <footer class="footer">
+        <div class="contacts">
+            <h1>Наші контакти</a></h1>
+            <div class="contacts_conteiner">
+                <img src="images/mail.png" class="img_mail img" onclick="copyEmail('email')" id="email"
+                    data-email="CarMXshop@gmail.com">
+                <img src="images/telephone.png" class="img_telephone img" onclick="copyTelephone('telephone')"
+                    id="telephone" data-telephone="+380000000000">
+                <img src="images/instagram.png" class="img_instagram img" alt="">
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
