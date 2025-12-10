@@ -1,2 +1,2 @@
 # BuyCMXS
-#https://sashacoders.github.io/BuyCMXS/
+https://sashacoders.github.io/BuyCMXS/
